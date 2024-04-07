@@ -1,0 +1,5 @@
+*.o
+*.so
+deepstream-parallel-infer
+build/
+.cache/
