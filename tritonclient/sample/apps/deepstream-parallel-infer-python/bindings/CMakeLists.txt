@@ -15,7 +15,7 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 cmake_policy(VERSION 3.12)
 
-project(pyds.common DESCRIPTION "Python bindings for Deepstream Apps Common")
+project(pyds_common DESCRIPTION "Python bindings for Deepstream Apps Common")
 
 # Avoid warning about DOWNLOAD_EXTRACT_TIMESTAMP in CMake 3.24:
 if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.24.0")
@@ -76,7 +76,6 @@ FetchContent_MakeAvailable(pybind11)
 add_library(${PROJECT_NAME}
   SHARED
     src/bindings.cpp
-    ${DS_PARALLEL_PATH}/deepstream_metamux_yaml.cpp
     ${DS_PARALLEL_PATH}/deepstream_parallel_infer_config_parser.cpp
     ${DS_COMMON_PATH}/src/deepstream_audio_classifier_bin.c
     ${DS_COMMON_PATH}/src/deepstream_common.c
@@ -169,4 +168,4 @@ target_link_options(${PROJECT_NAME}
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")
-set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "pyds.common")
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "pyds_common")

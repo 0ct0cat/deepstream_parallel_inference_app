@@ -230,6 +230,9 @@ struct _AppCtx
 gboolean
 parse_config_file_yaml (NvDsConfig * config, gchar * cfg_file_path);
 
+gboolean
+parse_metamux_yaml (NvDsMetaMuxConfig *config, gchar* cfg_file_path);
+
 #ifdef __cplusplus
 }
 #endif
